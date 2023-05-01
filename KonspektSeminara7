@@ -1,0 +1,397 @@
+Владимир Морозов: https://docs.google.com/presentation/d/1rIC4ejrOjoosn2WTCL-o1h89oC0FgYszU6jJl7oNXXI/edit?usp=sharing
+Иван Дёгтев: здравствуйте. +
+Екатерина: доброе утро. со вторым
+Владимир Морозов: https://quizizz.com/join?gc=011101
+Иван Дёгтев: вопрос по практическому 5, не успел прорешать задачи 2 и 3
+Иван Дёгтев: сегодня закончилось сдача по времени
+Иван Дёгтев: ок
+Антон: кроме итоговых срок не продлевают
+Сергей Петров: здравствуйте, у меня изчезает выбор, не участвую
+Антон: Кто первое место занял тот решает)
+Екатерина: Нет)
+Омар: lf gjyznyj
+Омар: да понятно
+Владимир Морозов: // Задача 1: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+// m = 3, n = 4.
+// 1 4 8 19
+// 5 -2 33 -2
+// 77 3 8 1
+
+int ReadInt(string message)
+{
+System.Console.Write($"{message} > ");
+return Convert.ToInt32(Console.ReadLine());
+}
+
+int[,] Generate2DArray(int cntRows, int cntColumns)
+{
+int[,] array = new int[cntRows, cntColumns];
+Random rnd = new Random();
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+array[i, j] = rnd.Next(-10, 11);
+}
+}
+return array;
+}
+
+void Print2DArray(int[,] array)
+{
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+System.Console.Write($"{array[i, j]}\t");
+}
+System.Console.WriteLine();
+}
+}
+
+int rows = ReadInt("Введите количество строк");
+int columns = ReadInt("Введите количество колонок");
+int[,] arr = Generate2DArray(rows,
+Сергей Петров: можно я посмотрю в записи, нужно сходить в магазины и купить котику еды.
+Владимир Морозов: Задача 1: Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aₘₙ = m+n. Выведите полученный массив на экран.
+m = 3, n = 4.
+0 1 2 3
+1 2 3 4
+2 3 4 5
+Сергей Петров: спасибо
+Антон: Екатерина хотела)
+Сергей Петров: досвидание, до встречи
+Владимир Морозов: Reacted to "досвидание, до встре..." with 👍
+Антон: всё корируй
+Антон: и вместо рандома i+j
+Омар: Reacted to "и вместо рандома i+j" with 👍
+Екатерина V.: i+j
+Омар: 18 строка тоже не нужна
+Стас Луковский: // Задача 1: Задайте двумерный массив размера m на n, каждый элемент в массиве находится
+// по формуле: Aₘₙ = m+n. Выведите полученный массив на экран.
+// m = 3, n = 4.
+// 0 1 2 3
+// 1 2 3 4
+// 2 3 4 5
+
+int ReadInt(string message)
+{
+System.Console.Write($"{message} > ");
+return Convert.ToInt32(Console.ReadLine());
+}
+
+
+int[,] Generate2DArray(int cntRows, int cntColumns)
+{
+int[,] array = new int[cntRows, cntColumns];
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+array[i, j] = i + j;
+}
+}
+return array;
+}
+
+void Print2DArray(int[,] array)
+{
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+System.Console.Write($"{array[i, j]}\t");
+}
+System.Console.WriteLine();
+}
+}
+
+int rows = ReadInt("Введите количество строк");
+int columns = ReadInt("Введите количество колонок");
+int[,] arr = Generate2DArray(rows, columns
+Suren: Новый метод
+Антон: можно сделать от первого плюс два?
+Suren: да
+Suren: Или проверить через переменная%2 ==0
+Антон: индекс+1%2?
+Suren: Зачем +1?
+Suren: Ты правильный вариант скинул
+Екатерина V.: if (i%2==0 && j%2==0)
+Suren: Я просто предложил второй вариант
+Екатерина V.: ?
+Suren: Reacted to "if (i%2==0 && j%2==0..." with 👍
+Антон: четная позиция на нечетном индексе или !=
+Suren: Аааа, позиции. Блин
+Антон: или (индекс +1) % 2 == 0 или проверять на неравенство?
+Suren: Тогда во втором цикле будет
+If индекс[i,j]%2 == 0
+Индекс[i,j] = индекск[i,j]*индекск[i,j]
+Екатерина: можно сделать в функции вывода? или надо преобразовать массива и потом вывести?
+Антон: и так работает
+Антон: вы
+Антон: уже говорили
+Антон: по условию надо новый массив или старый преобразовать?
+Иван Дёгтев: arr2=arr?
+Антон: пусть запустит
+Антон: можно сделать от первого плюс два?
+Екатерина: i+2
+
+
+
+
+Стас Луковский: // Задача 2: Задайте двумерный массив. Найдите элементы, у которых обе позиции чётные,
+// и замените эти элементы на их квадраты.
+
+
+int ReadInt(string message)
+{
+System.Console.Write($"{message} > ");
+return Convert.ToInt32(Console.ReadLine());
+}
+
+
+int[,] Generate2DArray(int cntRows, int cntColumns)
+{
+int[,] array = new int[cntRows, cntColumns];
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+array[i, j] = i + j;
+}
+}
+return array;
+}
+
+void Print2DArray(int[,] array)
+{
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+System.Console.Write($"{array[i, j]}\t");
+}
+System.Console.WriteLine();
+}
+}
+
+int[,] SquareEvens(int[,] array)
+{
+for (int i = 1; i < array.GetLength(0); i+=2)
+{
+for (int j = 1; j < array.GetLength(1); j+=2)
+{
+{
+array[i, j] *= array[i, j];
+}
+}
+}
+return array;
+}
+
+int rows = ReadInt("Введите количество строк");
+int colomns = ReadInt("Введите количество столбцов");
+int[,] arr = Generate2DArray(rows, colomns);
+Print2DArray(arr)
+int[,] arr2 =  SquareEvens(arr);
+System.Console.WriteLine();
+Print2DArray(arr2);
+
+
+Стас Луковский: // Задача 3: Задайте двумерный массив. Найдите сумму элементов главной диагонали.
+int ReadInt(string message)
+{
+System.Console.Write($"{message} > ");
+return Convert.ToInt32(Console.ReadLine());
+}
+
+
+int[,] Generate2DArray(int cntRows, int cntColumns)
+{
+int[,] array = new int[cntRows, cntColumns];
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+array[i, j] = i + j;
+}
+}
+return array;
+}
+
+void Print2DArray(int[,] array)
+{
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+System.Console.Write($"{array[i, j]}\t");
+}
+System.Console.WriteLine();
+}
+}
+
+int SumDiagonal(int[,] array)
+{
+int sum = 0;
+for (int i = 0; i < array.GetLength(0); i++)
+{
+sum += array[i, i];
+}
+return sum;
+}
+
+int rows = ReadInt("Введите количество строк");
+int columns = ReadInt("Введите количество колонок");
+int[,] arr = Generate2DArray(rows, colons);
+Print2DArray(arr);
+System.Console.WriteLine($"Сумма главной диагонали равна {SumDiagonal(arr)};
+
+
+
+
+Стас Луковский: // Задайте двумерный массив. Введите элемент, и найдите первое его вхождение,
+// выведите позиции по горизонтали и вертикали,
+// или напишите, что такого элемента нет.
+
+int ReadInt(string message)
+{
+System.Console.Write($"{message} > ");
+return Convert.ToInt32(Console.ReadLine());
+}
+
+
+int[,] Generate2DArray(int cntRows, int cntColumns)
+{
+int[,] array = new int[cntRows, cntColumns];
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+array[i, j] = i + j;
+}
+}
+return array;
+}
+
+void Print2DArray(int[,] array)
+{
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+System.Console.Write($"{array[i, j]}\t");
+}
+System.Console.WriteLine();
+}
+}
+(int, int) Find(int[,] array, int number) // кортеж (tuple) -возврат из функции 2-ух значений
+{
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+if (number == array[i,j])
+{
+return (i,j);
+}
+}
+}
+return (-1,-1);
+}
+
+
+int rows = ReadInt("Введите количество строк");
+int columns = ReadInt("Введите количество колонок");
+int[,] arr = Generate2DArray(rows, colons);
+Print2DArray(arr);
+int numb = ReadInt($"Введите число для поиска ");
+(int x, int y) = Find(arr, numb);
+if (x != -1)
+{
+System.Console.WriteLine($"Координаты вашего числа {x+1}, {y+1}");
+}
+else
+{
+System.Console.WriteLine($"Такого элемента в массиве нет");
+}
+
+
+
+
+Владимир Морозов: Задача 5: Задайте двумерный массив. Найдите максимальный элемент массива и среднее арифметическое всех элементов массива.
+Например, такой массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+
+Максимальный элемент массива 9
+Среднее арифметическое 4.25
+Антон: в одной функции делать или в разных?
+Владимир Морозов: foreach
+Екатерина: нет
+Стас Луковский: // Задайте двумерный массив. Найдите максимальный элемент массива
+// и среднее арифметическое всех элементов массива.
+
+int ReadInt(string message)
+{
+System.Console.Write($"{message} > ");
+return Convert.ToInt32(Console.ReadLine());
+}
+
+
+int[,] Generate2DArray(int cntRows, int cntColumns)
+{
+int[,] array = new int[cntRows, cntColumns];
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+array[i, j] = i + j;
+}
+}
+return array;
+}
+
+void Print2DArray(int[,] array)
+{
+for (int i = 0; i < array.GetLength(0); i++)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+{
+System.Console.Write($"{array[i, j]}\t");
+}
+System.Console.WriteLine();
+}
+}
+
+int SearchMax(int[,] array)
+{
+int max = array[0, 0];
+foreach (int item in array)
+{
+if (max < item)
+{
+max = item;
+}
+}
+return max;
+}
+
+double Average(int[,] array)
+{
+double sum = 0;
+foreach (int item in array)
+{
+sum += item; (max < item)
+}
+
+retern sum/array.Length;
+}
+
+int rows = ReadInt("Введите количество строк");
+int columns = ReadInt("Введите количество колонок");
+int[,] arr = Generate2DArray(rows, colons);
+Print2DArray(arr);
+System.Console.WriteLine($"Максимальное значение {SearchMax(arr)}");
+System.Console.WriteLine($"Среднее арифметическое {Average(arr)}");
